@@ -12,7 +12,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{4B357DA8-6304-4354-8341-286514828C6E}"
 	ProjectSection(SolutionItems) = preProject
 		assets\favicon.ico = assets\favicon.ico
-		style.css = style.css
 	EndProjectSection
 EndProject
 Global
