@@ -16,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{4B357D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "views", "views", "{DB14D9CF-20EB-4AE8-8C37-B9172099454A}"
 	ProjectSection(SolutionItems) = preProject
-		index.ejs = index.ejs
+		views\index.ejs = views\index.ejs
 	EndProjectSection
 EndProject
 Global
