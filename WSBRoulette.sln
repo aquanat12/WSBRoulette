@@ -14,12 +14,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{4B357D
 		assets\favicon.ico = assets\favicon.ico
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "views", "views", "{DB14D9CF-20EB-4AE8-8C37-B9172099454A}"
+	ProjectSection(SolutionItems) = preProject
+		index.ejs = index.ejs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4B357DA8-6304-4354-8341-286514828C6E} = {4EDE3713-782F-4EF8-8222-5F390CB02ECE}
+		{DB14D9CF-20EB-4AE8-8C37-B9172099454A} = {4EDE3713-782F-4EF8-8222-5F390CB02ECE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {67898D2B-70FF-4B5B-A198-1D47CD4E6C50}
