@@ -1,4 +1,4 @@
-const app = require("express")(); 
+const app = require("express")();
 const fetch = require('node-fetch');
 const bodyParser = require("body-parser"); 
 const favicon = require('serve-favicon');
@@ -8,7 +8,6 @@ app.set("view engine", "ejs");
 app.set("views", __dirname + "/views"); 
 app.use(bodyParser.urlencoded({ extended: false })); 
 app.use(favicon(__dirname + '/assets/favicon.ico')); 
-
 
 app.get("/", (req, res) => 
         {
@@ -26,7 +25,6 @@ app.get("/", (req, res) =>
     (async () => {
 
         let feed = await parser.parseURL('https://www.reddit.com/r/wallstreetbets/.rss');
-        console.log(feed.title);
 
         feed.items.forEach(item => {
             console.log(item.title + ':' + item.link)
