@@ -2,6 +2,8 @@ const app = require("express")();
 const fetch = require('node-fetch');
 const bodyParser = require("body-parser"); 
 const favicon = require('serve-favicon');
+const Parser = require('rss-parser');
+var parser = new Parser();
 app.set("view engine", "ejs"); 
 app.set("views", __dirname + "/views"); 
 app.use(bodyParser.urlencoded({ extended: false })); 
@@ -20,7 +22,17 @@ app.get("/", (req, res) =>
             var  qoodauthor = data[randomNumber].author;
             res.render("index", { qoodtext: qoodtext, qoodauthor: qoodauthor});
           });
-        }); 
+            }); 
+    (async () => {
+
+        let feed = await parser.parseURL('https://www.reddit.com/r/wallstreetbets/.rss');
+        console.log(feed.title);
+
+        feed.items.forEach(item => {
+            console.log(item.title + ':' + item.link)
+        });
+
+    })();
 app.listen(80);
 
 
