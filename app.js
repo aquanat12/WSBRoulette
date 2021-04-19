@@ -5,6 +5,7 @@ const favicon = require('serve-favicon');
 const Parser = require('rss-parser');
 const parser = new Parser();
 const StockSocket = require("stocksocket");
+const StockSocket = require("stocksocket");
 app.set("view engine", "ejs"); 
 app.set("views", __dirname + "/views"); 
 app.use(bodyParser.urlencoded({ extended: false })); 
