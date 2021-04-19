@@ -2,9 +2,6 @@ const app = require("express")();
 const fetch = require('node-fetch');
 const bodyParser = require("body-parser"); 
 const favicon = require('serve-favicon');
-const Parser = require('rss-parser');
-const parser = new Parser();
-const StockSocket = require("stocksocket");
 app.set("view engine", "ejs"); 
 app.set("views", __dirname + "/views"); 
 app.use(bodyParser.urlencoded({ extended: false })); 
@@ -73,7 +70,7 @@ app.get("/", (req, res) =>
                                 //var randomNumber = Math.floor(Math.random()*data.length);
                                // var  randticker = data[randomNumber].symbol;
                                // var  randname = data[randomNumber].name;
-                                //res.render("index", { qoodtext: qoodtext, qoodauthor: qoodauthor});
+                               //res.render("index", { qoodtext: qoodtext, qoodauthor: qoodauthor});
             };
             //console.log(item.title + ':' + item.link);
         });
