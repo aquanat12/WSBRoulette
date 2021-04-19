@@ -70,7 +70,7 @@ app.get("/", (req, res) =>
                                 //var randomNumber = Math.floor(Math.random()*data.length);
                                // var  randticker = data[randomNumber].symbol;
                                // var  randname = data[randomNumber].name;
-                                //res.render("index", { qoodtext: qoodtext, qoodauthor: qoodauthor});
+                               //res.render("index", { qoodtext: qoodtext, qoodauthor: qoodauthor});
             };
             //console.log(item.title + ':' + item.link);
         });
