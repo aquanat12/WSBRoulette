@@ -2,6 +2,7 @@ const app = require("express")();
 const fetch = require('node-fetch');
 const Parser = require('rss-parser');
 const parser = new Parser();
+
 const bodyParser = require("body-parser"); 
 const favicon = require('serve-favicon');
 app.set("view engine", "ejs"); 
@@ -58,6 +59,7 @@ app.get("/", (req, res) =>
                         stocks.push(ticker[i]);
                     }
                 }
+
             };
         });
         var stocksarray = compressArray(stocks);
