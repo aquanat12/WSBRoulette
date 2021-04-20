@@ -46,18 +46,7 @@ function compressArray(original) {
 
 app.get("/", (req, res) => 
         {
-        var qood = fetch(qoodapi)
-          .then(function(response) {
-            return response.json();
-          })
-          .then(function(data) {
-            var randomNumber = Math.floor(Math.random()*data.length);
-            var  qoodtext = data[randomNumber].text;
-            var  qoodauthor = data[randomNumber].author;
-            res.render("index", { qoodtext: qoodtext, qoodauthor: qoodauthor});
-          });
-            }); 
-    (async () => {
+		(async () => {
         var symbol_pat = /(\b[A-Z]{3,5}\b)/g;
         let feed = await parser.parseURL(rssapi);
         feed.items.forEach(item => {
@@ -74,9 +63,22 @@ app.get("/", (req, res) =>
         var stocksarray = compressArray(stocks);
         var rand = Math.floor(Math.random()*stocksarray.length);
         var randstock = stocksarray[rand];
-        res.render("index", { randstock: randstock});
+        var qood = fetch(qoodapi)
+          .then(function(response) {
+            return response.json();
+          })
+          .then(function(data) {
+            var randomNumber = Math.floor(Math.random()*data.length);
+            var  qoodtext = data[randomNumber].text;
+            var  qoodauthor = data[randomNumber].author;
+            res.render("index", { qoodtext: qoodtext, qoodauthor: qoodauthor, randstock: randstock});
+          });
+
+
 
     })();
+            }); 
+
 app.listen(80);
 
 
