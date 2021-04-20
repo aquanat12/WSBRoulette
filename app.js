@@ -1,5 +1,7 @@
 const app = require("express")();
 const fetch = require('node-fetch');
+const Parser = require('rss-parser');
+const parser = new Parser();
 const bodyParser = require("body-parser"); 
 const favicon = require('serve-favicon');
 app.set("view engine", "ejs"); 
@@ -32,10 +34,9 @@ function compressArray(original) {
 		}
  
 		if (myCount > 1) {
-			var a = new Object();
-			a.value = original[i];
-			a.count = myCount;
-			compressed.push(a);
+            for (var a = 0; a < myCount; a++){
+                compressed.push(original[i]);
+            }
 		}
 	}
  
@@ -67,12 +68,11 @@ app.get("/", (req, res) =>
                         stocks.push(ticker[i]);
                     }
                 }
-                                //var randomNumber = Math.floor(Math.random()*data.length);
-                               // var  randticker = data[randomNumber].symbol;
-                               // var  randname = data[randomNumber].name;
-                               //res.render("index", { qoodtext: qoodtext, qoodauthor: qoodauthor});
             };
-            //console.log(item.title + ':' + item.link);
+            //var stocklink = item.link;
+            //console.log(item.link);
+           // var stock = ticker[i];
+            //res.render("index", { stocklink: stocklink, stock: stock});
         });
         var stocksarray = compressArray(stocks);
         console.log(stocksarray);
