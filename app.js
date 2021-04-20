@@ -11,6 +11,7 @@ app.use(favicon(__dirname + '/assets/favicon.ico'));
 var qoodapi = "https://type.fit/api/quotes";
 var rssapi = "https://www.reddit.com/r/wallstreetbets/.rss?limit=100";
 var stocks = [];
+var feeditems = {};
 
 // edited from https://gist.github.com/ralphcrisostomo/3141412
 function compressArray(original) {
@@ -69,13 +70,12 @@ app.get("/", (req, res) =>
                     }
                 }
             };
-            //var stocklink = item.link;
-            //console.log(item.link);
-           // var stock = ticker[i];
-            //res.render("index", { stocklink: stocklink, stock: stock});
         });
         var stocksarray = compressArray(stocks);
-        console.log(stocksarray);
+        var rand = Math.floor(Math.random()*stocksarray.length);
+        var randstock = stocksarray[rand];
+        res.render("index", { randstock: randstock});
+
     })();
 app.listen(80);
 
